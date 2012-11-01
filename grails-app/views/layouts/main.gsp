@@ -103,6 +103,13 @@
 					</li>
 				</ul>
 			</div>
+			<div id="footerInfo">
+				<p><g:message code="layout.footer.footerInfo" default="Powered by"/>
+					<a href="www.grails.org">
+						Grails
+					</a>
+				</p>
+			</div>
 		</div>
 		
 		
