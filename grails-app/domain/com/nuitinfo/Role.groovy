@@ -2,14 +2,13 @@ package com.nuitinfo
 
 class Role {
 
-	String libelle
-	Boolean estAdmin
+	String authority
 
 	static mapping = {
 		cache true
 	}
 
 	static constraints = {
-		libelle blank: false, unique: true
+		authority blank: false, unique: true
 	}
 }

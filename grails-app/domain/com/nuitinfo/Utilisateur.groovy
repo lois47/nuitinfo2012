@@ -4,23 +4,22 @@ class Utilisateur {
 
 	transient springSecurityService
 
-	String nom
-	String prenom
-	String email
+	//String username
 	String login
-	String motdepasse
-	boolean estActif
-	boolean accountExpire
-	boolean accountBloque
-	boolean motdepasseExpire
+	String password
+	boolean enabled
+	boolean accountExpired
+	boolean accountLocked
+	boolean passwordExpired
 
 	static constraints = {
+		//username blank: false, unique: true
 		login blank: false, unique: true
-		motdepasse blank: false
+		password blank: false
 	}
 
 	static mapping = {
-		motdepasse column: '`motdepasse`'
+		password column: '`password`'
 	}
 
 	Set<Role> getAuthorities() {
@@ -32,12 +31,12 @@ class Utilisateur {
 	}
 
 	def beforeUpdate() {
-		if (isDirty('motdepasse')) {
+		if (isDirty('password')) {
 			encodePassword()
 		}
 	}
 
 	protected void encodePassword() {
-		motdepasse = springSecurityService.encodePassword(motdepasse)
+		password = springSecurityService.encodePassword(password)
 	}
 }

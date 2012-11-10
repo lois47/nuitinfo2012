@@ -35,6 +35,7 @@
 		<!-- MENU 
 		Menu de l'application. Powered by @url{http://pupunzi.open-lab.com/mb-jquery-components/} 
 		Pour plus d'information, la doc se trouve à l'adress suivante : @url{https://github.com/pupunzi/jquery.mb.menu/wiki} -->
+		<!-- Menu de premier niveau -->
 		<div class="menu" id="navigation">
 			<ul class="rootVoices">
 				<li class="rootVoice {menu: 'empty'}">
@@ -65,7 +66,7 @@
 				</li>
 			</ul>
 	     </div>
-	  	
+	  	<!-- Sous menu monCompte -->
 	  	 <div id="monCompte" class="mbmenu">
 		    <a rel="title" >title menu_1.1</a> <!-- menuvoice title-->
 		    <a href="someUrl.html" target="_blank" img="image.gif" >menu_1.1 (href)</a> <!-- menuvoice with href-->
@@ -105,7 +106,7 @@
 			</div>
 			<div id="footerInfo">
 				<p><g:message code="layout.footer.footerInfo" default="Powered by"/>
-					<a href="www.grails.org">
+					<a href="http://grails.org">
 						Grails
 					</a>
 				</p>
