@@ -24,9 +24,7 @@
 				<thead>
 					<tr>
 					
-						<g:sortableColumn property="libelle" title="${message(code: 'role.libelle.label', default: 'Libelle')}" />
-					
-						<g:sortableColumn property="estAdmin" title="${message(code: 'role.estAdmin.label', default: 'Est Admin')}" />
+						<g:sortableColumn property="authority" title="${message(code: 'role.authority.label', default: 'Authority')}" />
 					
 					</tr>
 				</thead>
@@ -34,9 +32,7 @@
 				<g:each in="${roleInstanceList}" status="i" var="roleInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
-						<td><g:link action="show" id="${roleInstance.id}">${fieldValue(bean: roleInstance, field: "libelle")}</g:link></td>
-					
-						<td><g:formatBoolean boolean="${roleInstance.estAdmin}" /></td>
+						<td><g:link action="show" id="${roleInstance.id}">${fieldValue(bean: roleInstance, field: "authority")}</g:link></td>
 					
 					</tr>
 				</g:each>

@@ -10,67 +10,43 @@
 	<g:textField name="login" required="" value="${utilisateurInstance?.login}"/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: utilisateurInstance, field: 'motdepasse', 'error')} required">
-	<label for="motdepasse">
-		<g:message code="utilisateur.motdepasse.label" default="Motdepasse" />
+<div class="fieldcontain ${hasErrors(bean: utilisateurInstance, field: 'password', 'error')} required">
+	<label for="password">
+		<g:message code="utilisateur.password.label" default="Password" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:textField name="motdepasse" required="" value="${utilisateurInstance?.motdepasse}"/>
+	<g:textField name="password" required="" value="${utilisateurInstance?.password}"/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: utilisateurInstance, field: 'accountBloque', 'error')} ">
-	<label for="accountBloque">
-		<g:message code="utilisateur.accountBloque.label" default="Account Bloque" />
+<div class="fieldcontain ${hasErrors(bean: utilisateurInstance, field: 'accountExpired', 'error')} ">
+	<label for="accountExpired">
+		<g:message code="utilisateur.accountExpired.label" default="Account Expired" />
 		
 	</label>
-	<g:checkBox name="accountBloque" value="${utilisateurInstance?.accountBloque}" />
+	<g:checkBox name="accountExpired" value="${utilisateurInstance?.accountExpired}" />
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: utilisateurInstance, field: 'accountExpire', 'error')} ">
-	<label for="accountExpire">
-		<g:message code="utilisateur.accountExpire.label" default="Account Expire" />
+<div class="fieldcontain ${hasErrors(bean: utilisateurInstance, field: 'accountLocked', 'error')} ">
+	<label for="accountLocked">
+		<g:message code="utilisateur.accountLocked.label" default="Account Locked" />
 		
 	</label>
-	<g:checkBox name="accountExpire" value="${utilisateurInstance?.accountExpire}" />
+	<g:checkBox name="accountLocked" value="${utilisateurInstance?.accountLocked}" />
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: utilisateurInstance, field: 'email', 'error')} ">
-	<label for="email">
-		<g:message code="utilisateur.email.label" default="Email" />
+<div class="fieldcontain ${hasErrors(bean: utilisateurInstance, field: 'enabled', 'error')} ">
+	<label for="enabled">
+		<g:message code="utilisateur.enabled.label" default="Enabled" />
 		
 	</label>
-	<g:textField name="email" value="${utilisateurInstance?.email}"/>
+	<g:checkBox name="enabled" value="${utilisateurInstance?.enabled}" />
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: utilisateurInstance, field: 'estActif', 'error')} ">
-	<label for="estActif">
-		<g:message code="utilisateur.estActif.label" default="Est Actif" />
+<div class="fieldcontain ${hasErrors(bean: utilisateurInstance, field: 'passwordExpired', 'error')} ">
+	<label for="passwordExpired">
+		<g:message code="utilisateur.passwordExpired.label" default="Password Expired" />
 		
 	</label>
-	<g:checkBox name="estActif" value="${utilisateurInstance?.estActif}" />
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: utilisateurInstance, field: 'motdepasseExpire', 'error')} ">
-	<label for="motdepasseExpire">
-		<g:message code="utilisateur.motdepasseExpire.label" default="Motdepasse Expire" />
-		
-	</label>
-	<g:checkBox name="motdepasseExpire" value="${utilisateurInstance?.motdepasseExpire}" />
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: utilisateurInstance, field: 'nom', 'error')} ">
-	<label for="nom">
-		<g:message code="utilisateur.nom.label" default="Nom" />
-		
-	</label>
-	<g:textField name="nom" value="${utilisateurInstance?.nom}"/>
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: utilisateurInstance, field: 'prenom', 'error')} ">
-	<label for="prenom">
-		<g:message code="utilisateur.prenom.label" default="Prenom" />
-		
-	</label>
-	<g:textField name="prenom" value="${utilisateurInstance?.prenom}"/>
+	<g:checkBox name="passwordExpired" value="${utilisateurInstance?.passwordExpired}" />
 </div>
 

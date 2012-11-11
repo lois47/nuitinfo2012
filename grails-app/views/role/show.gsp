@@ -23,20 +23,11 @@
 			</g:if>
 			<ol class="property-list role">
 			
-				<g:if test="${roleInstance?.libelle}">
+				<g:if test="${roleInstance?.authority}">
 				<li class="fieldcontain">
-					<span id="libelle-label" class="property-label"><g:message code="role.libelle.label" default="Libelle" /></span>
+					<span id="authority-label" class="property-label"><g:message code="role.authority.label" default="Authority" /></span>
 					
-						<span class="property-value" aria-labelledby="libelle-label"><g:fieldValue bean="${roleInstance}" field="libelle"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${roleInstance?.estAdmin}">
-				<li class="fieldcontain">
-					<span id="estAdmin-label" class="property-label"><g:message code="role.estAdmin.label" default="Est Admin" /></span>
-					
-						<span class="property-value" aria-labelledby="estAdmin-label"><g:formatBoolean boolean="${roleInstance?.estAdmin}" /></span>
+						<span class="property-value" aria-labelledby="authority-label"><g:fieldValue bean="${roleInstance}" field="authority"/></span>
 					
 				</li>
 				</g:if>
