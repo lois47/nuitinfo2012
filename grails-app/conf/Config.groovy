@@ -97,3 +97,16 @@ grails.plugins.springsecurity.userLookup.authorityJoinClassName = 'com.nuitinfo.
 grails.plugins.springsecurity.authority.className = 'com.nuitinfo.Role'
 grails.plugins.springsecurity.userLookup.usernamePropertyName = 'login'
 
+// Config pour l'envoie de mail
+grails {
+	mail {
+	  host = "smtp.gmail.com"
+	  port = 465
+	  username = "lastisi.nuitinfo@gmail.com"
+	  password = "lastisi2012"
+	  props = ["mail.smtp.auth":"true",
+			   "mail.smtp.socketFactory.port":"465",
+			   "mail.smtp.socketFactory.class":"javax.net.ssl.SSLSocketFactory",
+			   "mail.smtp.socketFactory.fallback":"false"]
+	}
+ }
