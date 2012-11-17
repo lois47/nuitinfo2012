@@ -4,6 +4,12 @@ class Utilisateur {
 
 	transient springSecurityService
 
+	// Attribut personnalis�
+	String nom
+	String prenom
+	String email
+	
+	// Attribut généré par le plugin
 	//String username
 	String login
 	String password
@@ -13,9 +19,12 @@ class Utilisateur {
 	boolean passwordExpired
 
 	static constraints = {
+		nom()
+		prenom()
+		email(email :true, blank:false, required: true)
 		//username blank: false, unique: true
 		login blank: false, unique: true
-		password blank: false
+		password(password: true, blank: false)
 	}
 
 	static mapping = {
@@ -38,5 +47,9 @@ class Utilisateur {
 
 	protected void encodePassword() {
 		password = springSecurityService.encodePassword(password)
+	}
+	
+	String toString(){
+		prenom+" "+nom
 	}
 }

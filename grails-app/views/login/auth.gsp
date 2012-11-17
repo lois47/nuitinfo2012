@@ -10,7 +10,7 @@
 	}
 
 	#login .inner {
-		width: 340px;
+		width: 750px;
 		padding-bottom: 6px;
 		margin: 60px auto;
 		text-align: left;
@@ -49,7 +49,7 @@
 		float: left;
 		text-align: right;
 		margin-left: -105px;
-		width: 110px;
+		width: 150px;
 		padding-top: 3px;
 		padding-right: 10px;
 	}
@@ -113,6 +113,12 @@
 				<input type='submit' id="submit" value='${message(code: "springSecurity.login.button")}'/>
 			</p>
 		</form>
+	</div>
+	<div class="inscription">
+		<p>
+			<g:message code="utilisateur.inscription.inscriptionMessage"/>
+			<g:link controller="inscription" action="index"><g:message code="utilisateur.inscription.inscriptionLien"/></g:link>
+		</p>
 	</div>
 </div>
 <script type='text/javascript'>

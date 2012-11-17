@@ -24,17 +24,17 @@
 				<thead>
 					<tr>
 					
+						<g:sortableColumn property="nom" title="${message(code: 'utilisateur.nom.label', default: 'Nom')}" />
+					
+						<g:sortableColumn property="prenom" title="${message(code: 'utilisateur.prenom.label', default: 'Prenom')}" />
+					
+						<g:sortableColumn property="email" title="${message(code: 'utilisateur.email.label', default: 'Email')}" />
+					
 						<g:sortableColumn property="login" title="${message(code: 'utilisateur.login.label', default: 'Login')}" />
 					
 						<g:sortableColumn property="password" title="${message(code: 'utilisateur.password.label', default: 'Password')}" />
 					
 						<g:sortableColumn property="accountExpired" title="${message(code: 'utilisateur.accountExpired.label', default: 'Account Expired')}" />
-					
-						<g:sortableColumn property="accountLocked" title="${message(code: 'utilisateur.accountLocked.label', default: 'Account Locked')}" />
-					
-						<g:sortableColumn property="enabled" title="${message(code: 'utilisateur.enabled.label', default: 'Enabled')}" />
-					
-						<g:sortableColumn property="passwordExpired" title="${message(code: 'utilisateur.passwordExpired.label', default: 'Password Expired')}" />
 					
 					</tr>
 				</thead>
@@ -42,17 +42,17 @@
 				<g:each in="${utilisateurInstanceList}" status="i" var="utilisateurInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
-						<td><g:link action="show" id="${utilisateurInstance.id}">${fieldValue(bean: utilisateurInstance, field: "login")}</g:link></td>
+						<td><g:link action="show" id="${utilisateurInstance.id}">${fieldValue(bean: utilisateurInstance, field: "nom")}</g:link></td>
+					
+						<td>${fieldValue(bean: utilisateurInstance, field: "prenom")}</td>
+					
+						<td>${fieldValue(bean: utilisateurInstance, field: "email")}</td>
+					
+						<td>${fieldValue(bean: utilisateurInstance, field: "login")}</td>
 					
 						<td>${fieldValue(bean: utilisateurInstance, field: "password")}</td>
 					
 						<td><g:formatBoolean boolean="${utilisateurInstance.accountExpired}" /></td>
-					
-						<td><g:formatBoolean boolean="${utilisateurInstance.accountLocked}" /></td>
-					
-						<td><g:formatBoolean boolean="${utilisateurInstance.enabled}" /></td>
-					
-						<td><g:formatBoolean boolean="${utilisateurInstance.passwordExpired}" /></td>
 					
 					</tr>
 				</g:each>

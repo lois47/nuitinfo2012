@@ -1,11 +1,29 @@
 package com.nuitinfo
+import com.nuitinfo.Utilisateur;
 
 /**
- * Ce controleur permet n'est là que pour permettre de modifier la langue sur la page d'accueil. 
+ * Ce controleur permet n'est lï¿½ que pour permettre de modifier la langue sur la page d'accueil. 
  * @author Thierry
  *
  */
 class IndexController {
 
     def index() { }
+	
+	/**
+	 * permet de tester 
+	 */
+	def test() {
+		def utilisateurInstance = new Utilisateur(nom: 'Weissbeck', prenom: 'Thierry', email: 'thierry.weissbeck@gmail.com', login: 'kazamafury', password: 'aze', enabled: true)
+		println(utilisateurInstance == null)
+		def hashCode = utilisateurInstance.login.hashCode();
+		sendMail {
+			to "thierry.weissbeck@gmail.com"
+			subject "[French patrimoine] Bienvenu ${utilisateurInstance.prenom} ${utilisateurInstance.nom}"
+			html g.render  (template:"/email/emailAccountActivation", model:[utilisateurInstance : utilisateurInstance, hashCode: hashCode])
+		  }
+		println(hashCode);
+	}
+	
+	
 }
