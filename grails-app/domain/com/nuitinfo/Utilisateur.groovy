@@ -19,8 +19,8 @@ class Utilisateur {
 	boolean passwordExpired
 
 	static constraints = {
-		nom()
-		prenom()
+		nom(required : true, blank: false)
+		prenom(required: true, blank: false)
 		email(email :true, blank:false, required: true)
 		//username blank: false, unique: true
 		login blank: false, unique: true
