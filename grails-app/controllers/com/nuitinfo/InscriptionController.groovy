@@ -22,7 +22,7 @@ class InscriptionController {
 			def hashCode = utilisateurInstance.login.hashCode();
 			// Envoie d'un mail au nouvel utilisateur (mail d'activation du compte)
 			sendMail {
-				to "thierry.weissbeck@gmail.com"
+				to utilisateurInstance.email
 				subject "[French patrimoine] Bienvenu ${utilisateurInstance.prenom} ${utilisateurInstance.nom}"
 				html g.render  (template:"/email/emailAccountActivation", model:[utilisateurInstance : utilisateurInstance, hashCode : hashCode])
 			  }
