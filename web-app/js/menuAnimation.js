@@ -27,6 +27,7 @@ $(document).ready(function(){
          submenuHoverIntent:0, //if you use jquery.hoverIntent.js set this to time in milliseconds; 0= false;
      });
 	 
+	 // l'animation sur le changement de la langue dans le footer
 	 $("#change-language").click(function() {
 		 $('#selectLanguage').fadeToggle('slow', 'linear');
 	 });
