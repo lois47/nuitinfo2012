@@ -3,7 +3,7 @@
 
 <div>
 	<h1>
-		Bienvenu sur notre site
+		Bienvenue sur notre site
 		${utilisateurInstance.prenom}
 		${utilisateurInstance.nom} <br/>
 	</h1>
@@ -11,7 +11,7 @@
 		Votre compte a bien été créé. <br/>
 
 
-Pour rappel, vos information de connexion sont les suivantes : <br/>
+Pour rappel, vos informations de connexion sont les suivantes : <br/>
 	
 		login : <b>
 		${utilisateurInstance.login} 

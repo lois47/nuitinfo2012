@@ -23,7 +23,7 @@ class InscriptionController {
 			// Envoie d'un mail au nouvel utilisateur (mail d'activation du compte)
 			sendMail {
 				to utilisateurInstance.email
-				subject "[French patrimoine] Bienvenu ${utilisateurInstance.prenom} ${utilisateurInstance.nom}"
+				subject "[French patrimoine] Bienvenue ${utilisateurInstance.prenom} ${utilisateurInstance.nom}"
 				html g.render  (template:"/email/emailAccountActivation", model:[utilisateurInstance : utilisateurInstance, hashCode : hashCode])
 			  }
 			
