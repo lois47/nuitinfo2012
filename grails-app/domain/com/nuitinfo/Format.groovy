@@ -4,7 +4,7 @@ class Format {
 
 	String nom;
 	
-	static hasMany = [contenir_id : Contenir, patrimoine_id : Patrimoine];
+	static hasMany = [contenu : Contenu];
 	
 	static constraints = {
 		nom blank: false, unique: true

@@ -5,7 +5,7 @@ class Categorie {
 	String nom
 	
 	static belongsTo = [univers: Univers]
-	static hasMany = [patrimoines : Patrimoine]
+	static hasMany = [cat_pats : Cat_Pat]
 	
 	Categorie categorieMere
 	Utilisateur createur

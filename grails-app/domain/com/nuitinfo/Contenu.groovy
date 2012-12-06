@@ -6,10 +6,9 @@ class Contenu {
 	Date date_deb;
 	Date date_fin;
 	int persistence;
+	Format format;
 	
-	static belongTo = [format_id : Format, contenir_id : Contenir];
-	
-	static hasMany = [patrimoine_id : Patrimoine];
+	static hasMany = [pat_cont : Pat_Cont]
 	
 	static constraints = {
 		nom blank: false, unique: true
