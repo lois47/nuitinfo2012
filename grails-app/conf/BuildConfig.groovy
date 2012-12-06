@@ -54,7 +54,7 @@ grails.project.dependency.resolution = {
 
 		compile ":spring-security-core:1.2.7.3"
 		compile ":mail:1.0.1"
-		compile ":cloud-foundry:1.2.3"
+		//compile ":cloud-foundry:1.2.3"
 		compile ":webxml:1.4.1"
         compile ':cache:1.0.0'
     }
