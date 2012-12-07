@@ -1,5 +1,6 @@
 package com.nuitinfo
 import com.nuitinfo.Utilisateur;
+import org.compass.core.engine.SearchEngineQueryParseException
 
 /**
  * Ce controleur permet n'est l� que pour permettre de modifier la langue sur la page d'accueil. 
@@ -7,12 +8,15 @@ import com.nuitinfo.Utilisateur;
  *
  */
 class IndexController {
-	UniversService universService
+
+	def searchableService;
+	UniversService universService;
 	
     def index() {
 		Univers[] universes = Univers.list() as Univers[];
 		[listeunivers:universes, universService: universService]
-	}
+    }
+	
 	
 	/**
 	 * permet de tester 
