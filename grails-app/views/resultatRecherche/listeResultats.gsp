@@ -79,11 +79,17 @@
         <g:each var="result" in="${searchResult.results}" status="index">
           <div class="result">
             <g:set var="className" value="${ClassUtils.getShortName(result.getClass())}" />
-            <g:set var="link" value="${createLink(controller: className[0].toLowerCase() + className[1..-1], action: 'show', id: result.id)}" />
-            <div class="name"><a href="${link}">${className} #${result.id}</a></div>
+            <g:if test="${className[0].toLowerCase()=='c' }">
+            	<g:set var="link" value="${createLink(controller: className[0].toLowerCase() + className[1..-1], action: 'listePatrimoines', id: result.id)}" />
+            </g:if>
+            <g:else>
+            	<g:set var="link" value="${createLink(controller: className[0].toLowerCase() + className[1..-1])}" />
+            </g:else>
             <g:set var="desc" value="${result.toString()}" />
+            <div class="name"><a href="${link}">${className} : ${desc.encodeAsHTML()}</a></div>
+            
             <g:if test="${desc.size() > 120}"><g:set var="desc" value="${desc[0..120] + '...'}" /></g:if>
-            <div class="desc">${desc.encodeAsHTML()}</div>
+            
             <div class="displayLink">${link}</div>
           </div>
         </g:each>
