@@ -1,6 +1,7 @@
 import com.nuitinfo.Role
 import com.nuitinfo.Utilisateur
 import com.nuitinfo.UtilisateurRole
+import com.nuitinfo.*;
 
 class BootStrap {
 
@@ -16,6 +17,11 @@ class BootStrap {
 		assert Utilisateur.count() == 1
 		assert Role.count() == 2
 		assert UtilisateurRole.count() == 1
+		
+		def univ1 = new Univers(nom: 'univ1');
+		univ1.save(flush:true);
+		def cat1 = new Categorie(nom: 'cat1', univers : univ1)
+		cat1.save(flush:true)
 		
     }
     def destroy = {
