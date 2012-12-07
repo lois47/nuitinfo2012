@@ -9,4 +9,8 @@ class Univers {
     static constraints = {
 		nom (unique: true, blank : false)
     }
+	
+	String toString(){
+		nom
+	}
 }
