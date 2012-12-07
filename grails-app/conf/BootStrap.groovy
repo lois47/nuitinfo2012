@@ -1,6 +1,3 @@
-import com.nuitinfo.Role
-import com.nuitinfo.Utilisateur
-import com.nuitinfo.UtilisateurRole
 import com.nuitinfo.*;
 
 class BootStrap {
@@ -18,12 +15,48 @@ class BootStrap {
 		assert Role.count() == 2
 		assert UtilisateurRole.count() == 1
 		
-		def univ1 = new Univers(nom: 'univ1');
-		univ1.save(flush:true);
-		def cat1 = new Categorie(nom: 'cat1', univers : univ1)
-		cat1.save(flush:true)
+		Univers universGastro = new Univers(nom: "Gastronomie")
+		universGastro.save(flush:true)
+		Univers UniversCulture = new Univers(nom: "Culture")
+		UniversCulture.save(flush:true)
+		Univers UniversGeo = new Univers(nom: "Geography")
+		UniversGeo.save(flush:true)
+		
+		
+		Categorie categTlse = new Categorie(nom: "Toulouse", createur: admin, univers: UniversGeo)
+		categTlse.save(flush:true)
+		
+		Categorie categMonument = new Categorie(nom: "Monument", createur: user1, univers: UniversCulture)
+		categMonument.save(flush:true)
+		
+		Categorie categMusee = new Categorie(nom: "Musee", categorieMere: categMonument, createur: user1, univers: UniversCulture)
+		categMusee.save(flush:true)
+		
+		Categorie categCamenbert = new Categorie(nom: "Camenbert", createur: user2, univers: universGastro)
+		categCamenbert.save(flush:true)
+		
+		assert Categorie.count() == 4
+		
+		
+		Patrimoine patrimoineRecette = new Patrimoine(nom: "recette camenbert au four")
+		patrimoineRecette.save(flush:true)
+		Patrimoine patrimoineMuseeCam = new Patrimoine(nom: "musee du camenbert")
+		patrimoineMuseeCam.save(flush:true)
+		
+		assert Patrimoine.count() == 2
+		
+		
+		Cat_Pat catPat = new Cat_Pat(categorie: categCamenbert, patrimoine: patrimoineRecette)
+		catPat.save(flush:true)
+		Cat_Pat catPat2 = new Cat_Pat(categorie: categCamenbert, patrimoine: patrimoineMuseeCam)
+		catPat2.save(flush:true)
+		Cat_Pat catPat3 = new Cat_Pat(categorie: categMusee, patrimoine: patrimoineMuseeCam)
+		catPat3.save(flush:true)
+		
+		assert Cat_Pat.count() == 3
 		
     }
+	
     def destroy = {
     }
 }
