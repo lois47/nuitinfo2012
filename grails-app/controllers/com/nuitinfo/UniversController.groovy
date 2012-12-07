@@ -3,9 +3,12 @@ package com.nuitinfo
 class UniversController {
 	
     def listeCategories(Long id) {
+		if(!id) {
+			redirect(uri:'/')
+		}
 		Univers universInstance = Univers.findById(id)
 		if(!universInstance) {
-			// TODO redirect to page d'accueil
+			redirect(uri:'/')
 		}
 		[universInstance: universInstance]
 	}
