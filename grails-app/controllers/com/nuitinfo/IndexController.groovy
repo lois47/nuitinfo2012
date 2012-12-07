@@ -7,11 +7,11 @@ import com.nuitinfo.Utilisateur;
  *
  */
 class IndexController {
-
+	UniversService universService
 	
     def index() {
-		Univers[] universes = Univers.list(sort:"nom",order : "asc") as Univers[];
-		[listeunivers:universes]
+		Univers[] universes = Univers.list() as Univers[];
+		[listeunivers:universes, universService: universService]
 	}
 	
 	/**
