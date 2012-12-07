@@ -12,8 +12,8 @@ class Contenu {
 	
 	static constraints = {
 		nom blank: false, unique: true
-		date_deb blank: true, unique: false
-		date_fin blank: true, unique: false
-		persistence blank: false, unique: false
+		date_deb blank: true, unique: false, nullable: true
+		date_fin blank: true, unique: false, nullable : true
+		persistence blank: false, unique: false, nullable : true
 	}
 }
