@@ -63,6 +63,9 @@ class BootStrap {
 		
 		assert Cat_Pat.count() == 3
 		
+		def format = new Format(nom :'STRING');
+		format.save(flush: true);
+		
     }
 	
     def destroy = {
