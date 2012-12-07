@@ -8,8 +8,10 @@ import com.nuitinfo.Utilisateur;
  */
 class IndexController {
 
-    def index() { 
-		def Universes = Univers.list(sort :"nom", order :"asc");
+	
+    def index() {
+		Univers[] universes = Univers.list(sort:"name",order : "asc") as Univers[];
+		[listeunivers:universes]
 	}
 	
 	/**
