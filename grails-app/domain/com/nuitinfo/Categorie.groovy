@@ -13,5 +13,11 @@ class Categorie {
 	
     static constraints = {
 		nom (unique : true, blank : false)
+		createur (nullable : true)
+		categorieMere (nullable : true)
     }
+	
+	String toString(){
+		nom
+	}
 }
