@@ -23,8 +23,6 @@ class UniversService {
 		
 	}
 
-	Univers[] getUniverses() {
-       Univers.list(sort:"name",order : "asc") as Univers[]
-    }
+	
 
 }

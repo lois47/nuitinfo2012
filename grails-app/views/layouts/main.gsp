@@ -50,7 +50,7 @@
 						<sec:ifLoggedIn>
 							<div class="btn" >
 								<g:link controller="utilisateur" action="edit">
-									Modifier mon compte
+									Mon Compte
 								</g:link>
 							</div>
 							<div class="btn" >
