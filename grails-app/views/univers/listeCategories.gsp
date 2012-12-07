@@ -11,7 +11,7 @@
 		
 		<div class="nav" role="navigation">
 			<sec:ifLoggedIn>
-				<g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" default="Creer une catégorie"/></g:link>
+				<g:link class="create" controller="categorie" action="create"><g:message code="default.new.label" args="[entityName]" default="Creer une catégorie"/></g:link>
 			</sec:ifLoggedIn>
 		</div>
 		<div id="list-categorie" class="content scaffold-list" role="main">

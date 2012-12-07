@@ -10,9 +10,10 @@
 	<body>
 		
 		<div class="nav" role="navigation">
-			<sec:ifLoggedIn>
+	<!-- 		<sec:ifLoggedIn>
 				<g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" default="Creer un patrimoine"/></g:link>
 			</sec:ifLoggedIn>
+	 -->
 		</div>
 		<div id="list-patrimoine" class="content scaffold-list" role="main">
 			<h1><g:message code="default.list.label" args="[entityName]" default="Liste des patrimoines"/></h1>
