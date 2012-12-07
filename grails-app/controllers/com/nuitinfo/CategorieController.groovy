@@ -8,9 +8,14 @@ class CategorieController {
 	static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
 
 	def listePatrimoines(Long id) {
+		if(!id) {
+			redirect(uri:'/')
+			return
+		}
 		Categorie categorie = Categorie.findById(id)
 		if(!categorie) {
-			// TODO redirect to page d'accueil
+			redirect(uri:'/')
+			return
 		}
 		[categorie: categorie]
 	}
