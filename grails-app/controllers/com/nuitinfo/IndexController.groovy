@@ -8,7 +8,9 @@ import com.nuitinfo.Utilisateur;
  */
 class IndexController {
 
-    def index() { }
+    def index() { 
+		def Universes = Univers.list(sort :"nom", order :"asc");
+	}
 	
 	/**
 	 * permet de tester 
