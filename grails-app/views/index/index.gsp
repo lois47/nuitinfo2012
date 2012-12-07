@@ -28,10 +28,18 @@
 		<div class="row-fluid ligne-nuages-univers">
 			<g:each in="${listeunivers}" status="i" var="universInstance">
 				<div class="univers">
-					<div class="nomUnivers">${fieldValue(bean: universInstance, field: "nom")}</div>
+					<div class="nomUnivers">
+						<g:link controller="Univers" action="listeCategories" params="[id: universInstance.id]">
+							${fieldValue(bean: universInstance, field: "nom")}
+						</g:link>
+					</div>
 					<ul class="list-categ" >
 						<g:each in="${universService.getBestCategrories(universInstance.id)}" status="j" var="categorieInstance">
-							<li class="categ${j }">${fieldValue(bean: categorieInstance, field: "nom")}</li>
+							<li class="categ${j }">
+								<g:link controller="Categorie" action="listePatrimoines" params="[id: categorieInstance.id]">
+									${fieldValue(bean: categorieInstance, field: "nom")}
+								</g:link>
+							</li>
 						</g:each>
 					</ul>		
 				</div>

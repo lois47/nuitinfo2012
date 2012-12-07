@@ -45,26 +45,29 @@
 					<li><g:link controller="index">
 							<g:message code="menu.accueil.message" default="Accueil" />
 						</g:link></li>
-					<li class=""><g:link controller="univers">
-							<g:message code="menu.univers.message" default="Univers" />
-						</g:link></li>
+			<!-- 		<li class="dropdown">
+						<g:link class="dropdown-toggle" data-toggle="dropdown">
+							<g:message code="menu.univers.message" default="Univers " /><b class="caret"></b>
+						</g:link>
+						<ul class="dropdown-menu">
+							
+							
+						</ul>
+					</li>	 -->
 
 				</ul>
 				<div class="pull-right">
 					<sec:ifLoggedIn>
 						<div class="btn">
 							<g:link controller="utilisateur" action="edit">
-								<sec:ifLoggedIn>
-									<sec:username />
-								</sec:ifLoggedIn>
-								<sec:ifNotLoggedIn>
-									Mon Compte
-									</sec:ifNotLoggedIn>
+								<sec:username />
 							</g:link>
+
 						</div>
 						<div class="btn">
 							<g:link controller='logout' action='index'>
 								<g:message code="menu.logout.message" default="Log out" />
+
 							</g:link>
 						</div>
 					</sec:ifLoggedIn>
