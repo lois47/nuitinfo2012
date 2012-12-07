@@ -10,7 +10,7 @@ class IndexController {
 
 	
     def index() {
-		Univers[] universes = Univers.list(sort:"name",order : "asc") as Univers[];
+		Univers[] universes = Univers.list(sort:"nom",order : "asc") as Univers[];
 		[listeunivers:universes]
 	}
 	
