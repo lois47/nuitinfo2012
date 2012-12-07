@@ -6,14 +6,22 @@ class BootStrap {
 		def adminRole = new Role(authority: 'ROLE_ADMIN').save(flush: true)
 		def userRole = new Role(authority: 'ROLE_USER').save(flush: true)
   
-		def testUser = new Utilisateur(login: 'admin', enabled: true, password: 'admin', nom:'admin', prenom:'admin', email:'thierry.weissbeck@gmail.com')
-		testUser.save(flush: true)
+		def admin = new Utilisateur(login: 'admin', enabled: true, password: 'admin', nom:'admin', prenom:'admin', email:'thierry.weissbeck@gmail.com')
+		admin.save(flush: true)
   
-		UtilisateurRole.create testUser, adminRole, true
-  
-		assert Utilisateur.count() == 1
+		Utilisateur user1 = new Utilisateur(login: 'user1', enabled: true, password: 'user1', nom:'user1', prenom:'user1', email:'user1@gmail.com')
+		user1.save(flush: true)
+		
+		Utilisateur user2 = new Utilisateur(login: 'user2', enabled: true, password: 'user2', nom:'user2', prenom:'user2', email:'user2@gmail.com')
+		user2.save(flush: true)
+		
+		UtilisateurRole.create admin, adminRole, true
+		UtilisateurRole.create user1, userRole, true
+		UtilisateurRole.create user2, userRole, true
+		
+		assert Utilisateur.count() == 3
 		assert Role.count() == 2
-		assert UtilisateurRole.count() == 1
+		assert UtilisateurRole.count() == 3
 		
 		Univers universGastro = new Univers(nom: "Gastronomie")
 		universGastro.save(flush:true)
