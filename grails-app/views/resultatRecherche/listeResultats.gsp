@@ -5,84 +5,9 @@
 <html>
   <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <title></title>
-    <style type="text/css">
-      * {
-        font-family: Arial, sans-serif;
-        padding: 0;
-        margin: 0;
-      }
-
-      body {
-        font-size: 0.9em;
-        padding: .5em;
-      }
-
-      #header form input {
-        padding: .1em;
-      }
-
-      #header .hint {
-        color: gray;
-      }
-
-      #header h1 a {
-        text-decoration: none;
-        font-family: Georgia, serif;
-          color: dimgray;
-      }
-
-      #header h1 {
-          letter-spacing: -0.1em;
-          float: left;
-      }
-
-      #header h1 span {
-          font-family: Georgia, serif;
-          color: #424242;
-      }
-
-      #header form {
-          margin-left: 22em;
-          padding-top: .1em;
-      }
-
-      .title {
-        margin: 1em 0;
-        padding: .3em .5em;
-        text-align: right;
-        background-color: seashell;
-        border-top: 1px solid lightblue;
-      }
-
-      .result {
-        margin-bottom: 1em;
-      }
-
-      .result .displayLink {
-        color: green;
-      }
-
-      .result .name {
-        font-size: larger;
-      }
-
-      .paging a.step {
-        padding: 0 .3em;
-      }
-
-      .paging span.currentStep {
-          font-weight: bold;
-      }
-
-      ul {
-        margin: 1em 2em;
-      }
-
-      li, p {
-        margin-bottom: 1em;
-      }
-    </style>
+    <meta name="layout" content="main">
+    <title>Resultats de recherche</title>
+   
     <script type="text/javascript">
         var focusQueryInput = function() {
             document.getElementById("q").focus();
@@ -90,13 +15,16 @@
     </script>
   </head>
   <body onload="focusQueryInput();">
-  <div id="header">
-    <g:form url='[controller: "resultatRecherche", action: "listeResultats"]' id="searchableForm" name="searchableForm" method="get">
-        <g:textField name="q" value="${params.q}" size="50"/> <input type="submit" value="Search" />
+  <div class="row-fluid">
+    <g:form url='[controller: "resultatRecherche", action: "listeResultats"]' id="searchableForm" name="searchableForm" method="get" class="form-search main-recherche">
+      <div class="input-append">
+        <g:textField name="q" class="search-query" placeholder="Rechercher..." value="${params.q}" size="50"/>
+        <button class="btn btn-primary" type="submit" value="Search"><i class="icon-search"></i></button>
+      </div>
     </g:form>
     <div style="clear: both; display: none;" class="hint">See <a href="http://lucene.apache.org/java/docs/queryparsersyntax.html">Lucene query syntax</a> for advanced queries</div>
   </div>
-  <div id="main">
+  <div class="row-fluid">
     <g:set var="haveQuery" value="${params.q?.trim()}" />
     <g:set var="haveResults" value="${searchResult?.results}" />
     <div class="title">
