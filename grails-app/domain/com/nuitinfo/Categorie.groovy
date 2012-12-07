@@ -4,6 +4,7 @@ class Categorie {
 
 	String nom
 	
+	static searchable = true
 	static belongsTo = [univers: Univers]
 	static hasMany = [cat_pats : Cat_Pat]
 	
