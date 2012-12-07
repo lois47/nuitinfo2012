@@ -40,7 +40,7 @@
 							</g:link>
 						</li>
 						<li class="">
-							<g:link controller="univers">
+							<g:link controller="univers" action="listeCategories">
 										<g:message code="menu.univers.message" default="Univers"/>
 							</g:link>
 						</li>
