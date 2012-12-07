@@ -6,23 +6,24 @@
 <html>
 	<head>
 		<meta name="layout" content="main"/>
-		<title>Welcome to Grails</title>
 		<script type="text/javascript">
 	        var focusQueryInput = function() {
 	            document.getElementById("q").focus();
 	        }
 	    </script>
+		<title>French Patrimoine : Accueil</title>
 	</head>
 	<body onload="focusQueryInput();">
 		<div class="row-fluid">
-			<g:form url='[controller: "index", action: "index"]' id="searchableForm" name="searchableForm" method="get">
+			<g:form url='[controller: "index", action: "index"]' id="searchableForm" 
+						name="searchableForm" method="get" class="form-search main-recherche">
 				<div class="input-append">
 					<g:textField name="q" class="search-query" placeholder="Rechercher..." value="${params.q}"/>
 					<button class="btn btn-primary" type="submit" value="Search"><i class="icon-search"></i></button>
 				</div>
 				<div style="clear: both; display: none;" class="hint">See <a href="http://lucene.apache.org/java/docs/queryparsersyntax.html">Lucene query syntax</a> for advanced queries</div>
 			</g:form>
-					
+								
 			<div id="main">
 		    <g:set var="haveQuery" value="${params.q?.trim()}" />
 		    <g:set var="haveResults" value="${searchResult?.results}" />
@@ -77,9 +78,9 @@
 		      <div class="results">
 		        <g:each var="result" in="${searchResult.results}" status="index">
 		          <div class="result">
-		            <g:set var="className" value="${ClassUtils.getShortName(result.getClass())}" />
-		            <g:set var="link" value="${createLink(controller: className[0].toLowerCase() + className[1..-1], action: 'show', id: result.id)}" />
-		            <div class="name"><a href="${link}">${className} #${result.id}</a></div>
+		         <%--    <g:set var="className" value="${ClassUtils.getShortName(result.getClass())}" /> --%>
+		         <%--    <g:set var="link" value="${createLink(controller: className[0].toLowerCase() + className[1..-1], action: 'show', id: result.id)}" /> --%>
+		         <%--    <div class="name"><a href="${link}">${className} #${result.id}</a></div> --%>
 		            <g:set var="desc" value="${result.toString()}" />
 		            <g:if test="${desc.size() > 120}"><g:set var="desc" value="${desc[0..120] + '...'}" /></g:if>
 		            <div class="desc">${desc.encodeAsHTML()}</div>
@@ -101,6 +102,18 @@
 		    </g:if>
 		  </div>
 	   </div>
+		<div class="row-fluid ligne-nuages-univers">
+			<g:each in="${listeunivers}" status="i" var="universInstance">
+				<div class="univers">
+					<div class="nomUnivers">${fieldValue(bean: universInstance, field: "nom")}</div>
+					<ul class="list-categ" >
+						<g:each in="${universService.getBestCategrories(universInstance.id)}" status="j" var="categorieInstance">
+							<li class="categ${j }">${fieldValue(bean: categorieInstance, field: "nom")}</li>
+						</g:each>
+					</ul>		
+				</div>
+			</g:each>
+		</div>
 	</body>
 </html>
 

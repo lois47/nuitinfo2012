@@ -9,11 +9,12 @@ import org.compass.core.engine.SearchEngineQueryParseException
  */
 class IndexController {
 
-	def searchableService
+	def searchableService;
+	UniversService universService;
 	
     def index() {
-		/*Univers[] universes = Univers.list(sort:"nom",order : "asc") as Univers[];
-		[listeunivers:universes]*/
+		Univers[] universes = Univers.list() as Univers[];
+		[listeunivers:universes, universService: universService]
 		
 		if (!params.q?.trim()) {
 			return [:]
