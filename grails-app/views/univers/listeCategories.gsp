@@ -37,7 +37,7 @@
 				<g:each in="${universInstance.categories}" status="i" var="categorieInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
-						<td>${fieldValue(bean: categorieInstance, field: "nom")}</td>
+						<td><g:link controller="Categorie" action="listePatrimoines" id="${categorieInstance.id }">${fieldValue(bean: categorieInstance, field: "nom")}</g:link></td>
 					
 						<td>${fieldValue(bean: categorieInstance, field: "createur")}</td>
 					
