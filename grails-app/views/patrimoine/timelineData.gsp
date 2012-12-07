@@ -26,6 +26,11 @@ storyjs_jsonp_data =
 						"endDate":"2011,12,14",
 						"headline":"Elephant",
 						"text":"<p>Body text goes here, some HTML is OK</p>",
+						"asset": {
+						"media":"http://www.linternaute.com/sortir/magazine/photo/les-joyaux-du-patrimoine-francais/image/gard-336349.jpg",
+						"credit":"Credit Name Goes Here",
+						"caption":"Caption text goes here"
+						}
 					},
 					{
 						"startDate":"2011,12,11",
