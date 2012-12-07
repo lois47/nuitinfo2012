@@ -1,0 +1,79 @@
+body {
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+.main-recherche {
+	margin-top: 40px;
+	margin-bottom: 40px;
+	text-align: center;
+}
+
+.ligne-nuages-univers {
+	text-align: center;
+}
+
+.univers {
+	margin: 10px;
+	position: relative;
+	width: 350px;
+	height: 250px;
+	
+	text-align: center;
+	
+	border-radius: 150px 100px 175px 110px;
+	box-shadow: 0px 0px 12px #5E5E5E;
+	
+	display: inline-block;
+}
+
+.nomUnivers {
+	width: 150px;
+	
+	display: inline-block;
+    margin-top: 115px;
+}
+
+.list-categ li {
+	
+	list-style-type: none;
+	
+	position: absolute;
+	width: 150px;
+	border-radius: 15px 15px 15px 0px;
+	
+	box-shadow: 0px 0px 12px #5E5E5E;
+}
+
+.categ0 {
+	
+	left: 90px;
+    top: 15px;
+
+}
+
+.categ1 {
+	
+	left: 5px;
+    top: 150px;
+
+}
+
+.categ2 {
+	
+	bottom: 30px;
+    left: 120px;
+
+}
+
+.categ3 {
+	
+	bottom: 150px;
+    right: 5px;
+}
+
+
+.footer {
+	margin-top: 40px;
+	border-top: 1px solid #D4D4D4;
+}

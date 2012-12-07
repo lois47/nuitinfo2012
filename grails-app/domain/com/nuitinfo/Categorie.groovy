@@ -4,6 +4,7 @@ class Categorie {
 
 	String nom
 	
+	static searchable = true
 	static belongsTo = [univers: Univers]
 	static hasMany = [cat_pats : Cat_Pat]
 	
@@ -12,5 +13,11 @@ class Categorie {
 	
     static constraints = {
 		nom (unique : true, blank : false)
+		createur (nullable : true)
+		categorieMere (nullable : true)
     }
+	
+	String toString(){
+		nom
+	}
 }
