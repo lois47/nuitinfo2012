@@ -33,8 +33,7 @@ class SearchableController {
             return [:]
         }
         try {
-            [searchResult: searchableService.search(params.q, params)]
-			redirect(controller:"patrimoine", action:"index")
+            return [searchResult: searchableService.search(params.q, params)]
         } catch (SearchEngineQueryParseException ex) {
             return [parseException: true]
         }
